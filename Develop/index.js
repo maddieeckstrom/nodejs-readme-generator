@@ -34,7 +34,7 @@ const questions = [{
         name: "license",
         message: "What license are you using?",
         choices: [
-            "Option 1",
+            "MIT",
             "Option 2",
             "Option 3",
         ]
@@ -42,7 +42,17 @@ const questions = [{
 ];
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+function writeToFile(fileName, data) {
+    fs.writeFile(fileName, data, function(err) {
+        console.log(fileName);
+        console.log(data);
+        if (err) {
+            return console.log(err)
+        } else {
+            console.log("success!");
+        }
+    })
+}
 
 // TODO: Create a function to initialize app
 function init() {}
