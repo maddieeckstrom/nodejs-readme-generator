@@ -1,14 +1,52 @@
 // TODO: Include packages needed for this application
 
 // TODO: Create an array of questions for user input
-const questions = [
-    "What is your project title?",
-    "Please provide a description of your application.",
-    "What are the installation instructions?",
-    "What is the usage information?",
-    "Please write your contributions here.",
-    "What are the test instructions?"
-];
+const inquirer = require('inquirer');
+
+inquirer.createPromptModule([
+    {
+        type: 'input',
+        name: "title",
+        message: "What is your project title?"
+    },
+    {
+        type: 'input',
+        name: "description",
+        message: "Please provide a description of your application."
+    },
+    {
+        type: 'input',
+        name: "installation",
+        message: "What are the installation instructions?"
+    },
+    {
+        type: 'input',
+        name: "usage",
+        message: "What is the usage information?"
+    },
+    {
+        type: 'input',
+        name: "contributions",
+        message: "Please write your contributions here."
+    },
+    {
+        type: 'input',
+        name: "test",
+        message: "What are the test instructions?"
+    },
+    {
+        type: 'checkbox',
+        name: "license",
+        message: "What license are you using?",
+        choices: [
+            "Option 1",
+            "Option 2",
+            "Option 3",
+        ]
+    }
+]).then(answers => console.log(answers));
+
+const questions = [];
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {}
