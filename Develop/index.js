@@ -2,6 +2,7 @@
 
 const inquirer = require('inquirer');
 const fs = require('fs');
+const generatorMarkdown = require('./utils/generateMarkdown');
 
 // TODO: Create an array of questions for user input
 
@@ -13,6 +14,10 @@ const questions = [{
         type: 'input',
         name: "description",
         message: "Please provide a description of your application."
+    }, {
+        type: "input",
+        name: "screenshot",
+        message: "Please provide a screenshot of your application using ![alt text](link to screenshot)"
     }, {
         type: 'input',
         name: "installation",
@@ -43,7 +48,7 @@ const questions = [{
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
-    fs.writeFile(fileName, data, function(err) {
+    fs.writeFile(fileName, generateMarkdown(data), function(err) {
         console.log(fileName);
         console.log(data);
         if (err) {
