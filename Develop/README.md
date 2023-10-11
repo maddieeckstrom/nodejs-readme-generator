@@ -1,9 +1,9 @@
 
-  # hi
+  # readme-generator
 
   ## Description
 
-  hi
+  none
 
   ## Table of Contents
 
@@ -16,30 +16,30 @@
 
   ## Installation
 
-  hi
+  none
 
   ## Usage
 
-  hi
-  hi
+  none
+  none
 
   ## Credits
 
-  hi
+  none
 
   ## License
 
   
-    undefined
-    undefined
+    ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)]
+    (https://opensource.org/license/MIT)
   
 
   ## Tests
 
-  hi
+  none
 
   ## Questions
 
-  'https://github.com/hi'
-  If you have any additional questions, please contact me at: hi
+  'https://github.com/none'
+  If you have any additional questions, please contact me at: none
 
