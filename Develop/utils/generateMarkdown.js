@@ -1,43 +1,46 @@
-// TODO: Create a function that returns a license badge based on which license is passed in
+// a function that returns a license badge based on which license is passed in
 function renderLicenseBadge(license) {
 
   if (license === 'Apache License 2.0') {
-    return '![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)'
+    return '![License: Apache License 2.0](https://img.shields.io/badge/License-Apache_2.0-blue.svg)'
   }
   if (license === 'GNU General Public License v3.0') {
-    return '[![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)]'
+    return '![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)]'
   }
   if (license === 'MIT') {
-    return '[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)]'
+    return '![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)]'
   }
   if (license === 'BSD 2-Clause License') {
-    return '[![License](https://img.shields.io/badge/License-BSD%202--Clause-orange.svg)]'
+    return '![License](https://img.shields.io/badge/License-BSD%202--Clause-orange.svg)]'
   }
   if (license === 'BSD 3-Clause License') {
-    return '[![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)]'
+    return '![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)]'
   }
   if (license === 'Eclipse Public License 1.0') {
-    return '[![License](https://img.shields.io/badge/License-EPL%201.0-red.svg)]'
+    return '![License](https://img.shields.io/badge/License-EPL%201.0-red.svg)]'
   }
   if (license === 'GNU Affero General Public License v3.0') {
-    return '[![License: AGPL v3](https://img.shields.io/badge/License-AGPL%20v3-blue.svg)]'
+    return '![License: AGPL v3](https://img.shields.io/badge/License-AGPL%20v3-blue.svg)]'
   }
   if (license === 'GNU General Public License v2.0') {
-    return '[![License: GPL v2](https://img.shields.io/badge/License-GPL%20v2-blue.svg)]'
+    return '![License: GPL v2](https://img.shields.io/badge/License-GPL%20v2-blue.svg)]'
   }
   if (license === 'GNU Lesser General Public License v3') {
-    return '[![License: LGPL v3](https://img.shields.io/badge/License-LGPL%20v3-blue.svg)]'
+    return '![License: LGPL v3](https://img.shields.io/badge/License-LGPL%20v3-blue.svg)]'
   }
   if (license === 'Mozilla Public License 2.0') {
-    return '[![License: MPL 2.0](https://img.shields.io/badge/License-MPL%202.0-brightgreen.svg)]'
+    return '![License: MPL 2.0](https://img.shields.io/badge/License-MPL%202.0-brightgreen.svg)]'
   }
   if (license === 'Unlicense') {
+    return ''
+  }
+  if (license === '') {
     return ''
   }
 
 }
 
-// TODO: Create a function that returns the license link
+// a function that returns the license link
 function renderLicenseLink(license) {
 
   if (license === 'Apache License 2.0') {
@@ -73,14 +76,22 @@ function renderLicenseLink(license) {
   if (license === 'Unlicense') {
     return ''
   }
+  if (license === '') {
+    return ''
+  }
 }
 
+
 // TODO: Create a function that returns the license section of README
-function renderLicenseSection(license) {}
+function renderLicenseSection(license) {
+  renderLicenseBadge(license);
+  renderLicenseLink(license);
+}
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
-  return `# ${data.title}
+  return`
+  # ${data.title}
 
   ## Description
 
@@ -88,11 +99,12 @@ function generateMarkdown(data) {
 
   ## Table of Contents
 
-  - [Installation](#installation)
-  - [Usage](#usage)
-  - [Credits](#credits)
-  - [License](#license)
-  - [Tests](#tests)
+  - [Installation](#Installation)
+  - [Usage](#Usage)
+  - [Credits](#Credits)
+  - [License](#License)
+  - [Tests](#Tests)
+  - [Questions](#Questions)
 
   ## Installation
 
@@ -109,11 +121,16 @@ function generateMarkdown(data) {
 
   ## License
 
-  ${data.license}
+  ${renderLicenseSection()}
 
   ## Tests
 
   ${data.test}
+
+  ## Questions
+
+  'https://github.com/${data.github}'
+  If you have any additional questions, please contact me at: ${data.email}
 
 `;
 }
