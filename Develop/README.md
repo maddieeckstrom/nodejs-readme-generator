@@ -1,5 +1,5 @@
 
-  # readme-generator
+  # readme
 
   ## Description
 
@@ -37,6 +37,6 @@
 
   ## Questions
 
-  'https://github.com/maddieeckstrom'
+  'https://github.com/none'
   If you have any additional questions, please contact me at: none
 

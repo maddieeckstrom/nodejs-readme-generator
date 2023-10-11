@@ -121,7 +121,7 @@ function generateMarkdown(data) {
 
   ## License
 
-  ${renderLicenseSection()}
+  ${renderLicenseSection(data.license)}
 
   ## Tests
 
